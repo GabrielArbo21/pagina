@@ -6,7 +6,8 @@
     --color-fondo: #fef3c7; /* Ámbar claro de fondo */
     --color-tarjeta: #ffffff;
     --color-texto: #292524; /* Gris piedra oscuro */
-    --color-texto-mutado: #78716c;
+    --color-texto-mutado: #000000;
+    --color-bajo: #522e00;
 }
 
 * {
@@ -17,7 +18,14 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-fondo);
+    
+    background-image: url('imagenes/fondo-cacao.png');
+    background-size: cover;
+    background-position: center center; 
+    background-attachment: fixed;
+    
+    background-color: var(--color-fondo); 
+    
     color: var(--color-texto);
     display: flex;
     flex-direction: column;
@@ -32,6 +40,7 @@ body {
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--color-bajo); 
 }
 
 .nav-container {
@@ -367,11 +376,79 @@ body {
     padding-top: 1.5rem;
 }
 
-/* --- Pie de Página --- */
-footer {
+/* --- Pie de Página Ampliado --- */
+.footer {
     background-color: #0c0a09;
     color: #a8a29e;
-    padding: 1.5rem;
-    text-align: center;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    margin-top: auto; 
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Forzamos la grilla a 3 columnas (una fila) de manera permanente */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    text-align: left; 
+}
+
+.footer-col h4 {
+    color: #fef3c7; 
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.footer-col p, 
+.footer-col ul {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.75rem;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    /* Fuerza a que los botones de redes no salten a la siguiente línea */
+    flex-wrap: nowrap; 
+    justify-content: flex-start;
+}
+
+.social-links a {
+    color: #a8a29e;
+    text-decoration: none;
     font-size: 0.85rem;
+    border: 1px solid #3f3f46;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    /* Evita que el texto dentro del botón se rompa a la mitad */
+    white-space: nowrap; 
+}
+
+.social-links a:hover {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    border-color: var(--color-secundario);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #292524;
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+    /* Hace que el texto de copyright ocupe todo el ancho inferior */
+    grid-column: 1 / -1; 
 }
