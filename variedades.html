@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YuraMarket | Cotizar</title>
+    <title>YuraMarket | Variedades</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,86 +13,112 @@
             <div class="nav-logo">YURAMARKET</div>
             <div class="nav-links">
                 <a href="index.html">Inicio</a>
-                <a href="formulario.html" class="active">Cotizar</a>
-                <a href="variedades.html">Variedades</a>
-                <a href="mercado.html">Market Vivo</a>
+                <a href="formulario.html">Cotizar</a>
+                <a href="variedades.html" class="active">Variedades</a>
+                <a href="mercado.html">Mercado Vivo</a>
             </div>
         </div>
     </nav>
 
     <main class="main-content">
-        <div class="container-sm">
-            <div class="card" style="text-align: left;">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Intención de Compra</h2>
-                <p class="card-desc" style="margin-bottom: 1.5rem;">Por favor, ingresa los requisitos logísticos de tu empresa para simular tu orden de exportación.</p>
-                
-                <form id="formCotizacion">
-                    <div class="form-group">
-                        <label class="form-label">Compañía Importadora</label>
-                        <input type="text" id="compania" class="form-control" placeholder="Ej. Chocolate Global Corp" required>
-                    </div>
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2rem; color: var(--color-principal);">Nuestras Variedades de Cacao</h2>
+            <p style="color: var(--color-texto-mutado);">Conoce los perfiles de los granos que ofrecemos para exportación.</p>
+        </div>
 
-                    <div class="form-group">
-                        <label class="form-label">Destino de Exportación</label>
-                        <select id="pais" class="form-control">
-                            <option value="usa">Estados Unidos (Puertos del Atlántico)</option>
-                            <option value="deu">Alemania (Puerto de Hamburgo)</option>
-                            <option value="jpn">Japón (Puerto de Tokio)</option>
-                        </select>
-                    </div>
+        <section class="grid-2">
+            <div class="product-card">
+                <div class="product-info" style="width: 100%;">
+                    <span class="badge badge-amber">Premium</span>
+                    <h3 class="card-title" style="text-align: left; margin-top: 0.5rem;">Cacao Nacional Fino de Aroma</h3>
+                    <p class="card-desc" style="text-align: left; margin-bottom: 1rem;">
+                        Reconocido mundialmente por sus notas florales y frutales. Ideal para chocolatería fina y productos gourmet. Cultivado de forma tradicional.
+                    </p>
+                    <ul style="color: var(--color-texto-mutado); font-size: 0.9rem; margin-left: 1.5rem;">
+                        <li>Fermentación: 75% - 80%</li>
+                        <li>Perfil: Floral, frutal, nueces</li>
+                        <li>Aplica prima de valor (+12%)</li>
+                    </ul>
+                </div>
+            </div>
 
-                    <div class="form-group">
-                        <label class="form-label">Variedad Seleccionada</label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="tipoCacao" value="Nacional" checked>
-                                <span>Nacional Fino</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="tipoCacao" value="CCN51">
-                                <span>CCN-51 Industrial</span>
-                            </label>
-                        </div>
-                    </div>
+            <div class="product-card">
+                <div class="product-info" style="width: 100%;">
+                    <span class="badge badge-stone">Industrial</span>
+                    <h3 class="card-title" style="text-align: left; margin-top: 0.5rem;">Cacao CCN-51</h3>
+                    <p class="card-desc" style="text-align: left; margin-bottom: 1rem;">
+                        Granos de alta productividad y alto contenido de manteca. Perfecto para procesos industriales, polvos de cacao y cosmética.
+                    </p>
+                    <ul style="color: var(--color-texto-mutado); font-size: 0.9rem; margin-left: 1.5rem;">
+                        <li>Fermentación: 65% - 70%</li>
+                        <li>Perfil: Cacao fuerte, acidez media</li>
+                        <li>Alta rentabilidad por volumen</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Tarjeta 3: Criollo -->
+            <div class="product-card">
+                <div class="product-info" style="width: 100%;">
+                    <span class="badge badge-amber" style="background-color: #fcd34d; color: #78350f;">Gourmet Exclusivo</span>
+                    <h3 class="card-title" style="text-align: left; margin-top: 0.5rem;">Cacao Criollo Fino</h3>
+                    <p class="card-desc" style="text-align: left; margin-bottom: 1rem;">
+                        Considerado el "rey del cacao". De cáscara fina y semillas blancas o violeta pálido, produce el chocolate con el sabor más complejo y menos amargo del mundo.
+                    </p>
+                    <ul style="color: var(--color-texto-mutado); font-size: 0.9rem; margin-left: 1.5rem;">
+                        <li>Fermentación: 80% - 85%</li>
+                        <li>Perfil: Caramelo, nueces, vainilla suave</li>
+                        <li>Escaso: Representa menos del 5% de la producción mundial</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Tarjeta 4: Trinitario -->
+            <div class="product-card">
+                <div class="product-info" style="width: 100%;">
+                    <span class="badge badge-stone" style="background-color: #e7e5e4; color: #292524;">Híbrido Premium</span>
+                    <h3 class="card-title" style="text-align: left; margin-top: 0.5rem;">Cacao Trinitario</h3>
+                    <p class="card-desc" style="text-align: left; margin-bottom: 1rem;">
+                        Nacido del cruce natural entre el Criollo y el Forastero amazónico. Combina magistralmente la resistencia a enfermedades con sabores y aromas muy refinados.
+                    </p>
+                    <ul style="color: var(--color-texto-mutado); font-size: 0.9rem; margin-left: 1.5rem;">
+                        <li>Fermentación: 70% - 75%</li>
+                        <li>Perfil: Equilibrado, toques frutales y madera</li>
+                        <li>Altamente demandado en mercados europeos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
-                    <div class="form-group">
-                        <label class="form-label">Volumen Requerido (Toneladas Métricas)</label>
-                        <input type="number" id="toneladas" min="1" max="1000" class="form-control" placeholder="Ej. 20" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-block">Guardar Requerimientos</button>
-                </form>
-
-                <div id="alertaExito" class="alert alert-success hidden">
-                    ¡Requerimientos guardados! Visita la pestaña "Market Vivo" para ver el presupuesto final.
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Columna 1: Info de la marca -->
+            <div class="footer-col">
+                <h4>YURAMARKET</h4>
+                <p>Conectando el mejor cacao de exportación con las exigencias del mundo entero. Calidad, origen y transparencia.</p>
+            </div>
+            
+            <!-- Columna 2: Contacto -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <ul>
+                    <li>📧 Correo: tu-correo@ejemplo.com</li>
+                    <li>📍 Ubicación: Manta, Manabí - Ecuador</li>
+                </ul>
+            </div>
+            
+            <!-- Columna 3: Redes Sociales -->
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
                 </div>
             </div>
         </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 YuraMarket. Catálogo Internacional de Cacao.</p>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 YuraMarket. Catálogo Internacional de Cacao.</p>
+        </div>
     </footer>
 
-    <script>
-        document.getElementById('formCotizacion').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const datos = {
-                compania: document.getElementById('compania').value,
-                pais: document.getElementById('pais').value,
-                tipoCacao: document.querySelector('input[name="tipoCacao"]:checked').value,
-                toneladas: parseFloat(document.getElementById('toneladas').value)
-            };
-            
-            // Guardar el objeto en localStorage convirtiéndolo a texto JSON
-            localStorage.setItem('yura_pedido_simulado', JSON.stringify(datos));
-            
-            // Mostrar alerta de éxito
-            const alerta = document.getElementById('alertaExito');
-            alerta.classList.remove('hidden');
-            setTimeout(() => alerta.classList.add('hidden'), 4000);
-        });
-    </script>
 </body>
 </html>
