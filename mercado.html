@@ -63,86 +63,42 @@
                 </tr>
             </table>
         </div>
-        <button id="btnLimpiar" class="btn" style="background-color: #7c2d12; margin-top: 1rem;">
+        <button id="btnLimpiar" class="btn" style="background-color: #7c2d12; margin-top: 1rem; display: none;">
     Eliminar Datos Guardados
 </button>
     </main>
 
-    <footer>
-        <p>&copy; 2026 YuraMarket. Catálogo Internacional de Cacao.</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Columna 1: Info de la marca -->
+            <div class="footer-col">
+                <h4>YURAMARKET</h4>
+                <p>Conectando el mejor cacao de exportación con las exigencias del mundo entero. Calidad, origen y transparencia.</p>
+            </div>
+            
+            <!-- Columna 2: Contacto -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <ul>
+                    <li>📧 Correo: tu-correo@ejemplo.com</li>
+                    <li>📍 Ubicación: Manta, Manabí - Ecuador</li>
+                </ul>
+            </div>
+            
+            <!-- Columna 3: Redes Sociales -->
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 YuraMarket. Catálogo Internacional de Cacao.</p>
+        </div>
     </footer>
 
-    <script>
-        async function conectarMercado() {
-            try {
-                // Fetch asíncrono a una API pública para validar la conexión de red externa exigida
-                await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
-                
-                // Definición del valor bursátil de referencia internacional (USD por tonelada de cacao)
-                const valorMercadoCacao = 8790; 
-                document.getElementById('precioApi').innerText = `$${valorMercadoCacao.toLocaleString()} USD`;
-                
-                // Desencadenar la lectura de datos locales y cálculos automatizados
-                ejecutarCalculos(valorMercadoCacao);
-            } catch (err) {
-                console.warn("Error de red exterior, ejecutando datos de respaldo local.", err);
-                document.getElementById('precioApi').innerText = "$8,500 USD";
-                ejecutarCalculos(8500);
-            }
-        }
-
-        function ejecutarCalculos(precioMercado) {
-            // Lectura de los datos capturados en el formulario
-            const jsonLocales = localStorage.getItem('yura_pedido_simulado');
-            if (!jsonLocales) return;
-
-            const datos = JSON.parse(jsonLocales);
-            
-            // Inyección de los datos cargados desde el LocalStorage a la interfaz de usuario
-            document.getElementById('datosLocalesContainer').innerHTML = `
-                <div><span style="color: var(--color-texto-mutado); font-size: 0.8rem;">EMPRESA:</span><p style="font-weight: bold;">${datos.compania}</p></div>
-                <div><span style="color: var(--color-texto-mutado); font-size: 0.8rem;">DESTINO:</span><p style="font-weight: bold; text-transform: uppercase;">${datos.pais}</p></div>
-                <div><span style="color: var(--color-texto-mutado); font-size: 0.8rem;">VARIEDAD:</span><p style="font-weight: bold; color: var(--color-principal);">${datos.tipoCacao}</p></div>
-                <div><span style="color: var(--color-texto-mutado); font-size: 0.8rem;">CANTIDAD:</span><p style="font-weight: bold;">${datos.toneladas} TM</p></div>
-            `;
-
-            // Hace visible el panel donde se muestran las operaciones matemáticas
-            const panel = document.getElementById('panelCalculos');
-            panel.style.display = 'block';
-
-            // --- Lógica Matemática Exigida ---
-            const subtotalFruto = datos.toneladas * precioMercado;
-            
-            // Recargo adicional del 12% si se prefiere la variedad Nacional (Fino de Aroma)
-            const primaVariedad = datos.tipoCacao === 'Nacional' ? (subtotalFruto * 0.12) : 0; 
-            
-            // Tasas logísticas estimadas según la zona geográfica seleccionada en el formulario
-            let factorLogistico = 0.05; // 5% para USA
-            if (datos.pais === 'deu') factorLogistico = 0.08; // 8% para Alemania (Europa)
-            if (datos.pais === 'jpn') factorLogistico = 0.12; // 12% para Japón (Asia)
-            const fleteAduana = subtotalFruto * factorLogistico;
-
-            // Sumatoria final automatizada
-            const totalInversion = subtotalFruto + primaVariedad + fleteAduana;
-
-            // Impresión de los resultados formateados en la tabla de costos
-            document.getElementById('calcBase').innerText = `$${subtotalFruto.toLocaleString('en-US')} USD`;
-            document.getElementById('calcPrima').innerText = `$${primaVariedad.toLocaleString('en-US')} USD`;
-            document.getElementById('calcLogistica').innerText = `$${fleteAduana.toLocaleString('en-US')} USD`;
-            document.getElementById('calcTotal').innerText = `$${totalInversion.toLocaleString('en-US', {minimumFractionDigits: 2})} USD`;
-        }
-
-        // Evento que inicia la consulta bursátil al terminar de renderizar la ventana
-        window.onload = conectarMercado;
-        
-        
-        document.getElementById('btnLimpiar').addEventListener('click', function() {
-    // Elimina la clave específica de YuraMarket
-    localStorage.removeItem('yura_pedido_simulado');
-    
-    // Opcional: Recarga la página para ver el cambio de inmediato
-    location.reload();
-});
-    </script>
+    <script src="mercado.js"></script>
 </body>
 </html>
