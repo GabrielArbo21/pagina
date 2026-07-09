@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuraMarket | Mi Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">YURAMARKET</div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="formulario.html">Cotizar</a>
+                <a href="variedades.html">Variedades</a>
+                <a href="mercado.html">Mercado Vivo</a>
+                <a href="perfil.html" class="active">Perfil</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container-sm">
+            
+            <div class="card" id="seccionCrearPerfil" style="text-align: left;">
+                <h2 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Crear Perfil de Usuario</h2>
+                <p class="card-desc" style="margin-bottom: 1.5rem;">Regístrate en nuestra plataforma para personalizar tu experiencia en el comercio de cacao.</p>
+                
+                <form id="formPerfil">
+                    <div class="form-group">
+                        <label class="form-label">Tipo de Usuario</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="tipoUsuario" value="ordinario" checked>
+                                <span>Cliente Ordinario</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="tipoUsuario" value="empresa">
+                                <span>Empresa / Comercio</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label id="lblNombre" class="form-label">Nombre Completo</label>
+                        <input type="text" id="nombreInput" class="form-control" placeholder="Ej. Juan Pérez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label id="lblIdentificacion" class="form-label">Cédula o Pasaporte</label>
+                        <input type="text" id="identificacionInput" class="form-control" placeholder="Ej. 131XXXXXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Correo Electrónico</label>
+                        <input type="email" id="correoPerfil" class="form-control" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-block">Registrar Perfil</button>
+                </form>
+            </div>
+
+            <div class="card" id="seccionVerPerfil" style="display: none; text-align: left;">
+                
+                <div style="text-align: center; border-bottom: 1px solid #e7e5e4; padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="font-size: 4rem; margin-bottom: 0.5rem;">👤</div>
+                    <h2 id="displayNombre" style="color: var(--color-principal); font-size: 1.8rem; margin-bottom: 0.5rem;">Nombre del Usuario</h2>
+                    <span id="displayTipo" class="badge badge-amber">Tipo de Usuario</span>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.1rem; color: var(--color-texto-mutado); margin-bottom: 0.5rem;">Información de Contacto</h3>
+                    <p style="font-size: 1rem;"><strong>Correo:</strong> <span id="displayCorreo"></span></p>
+                    <p style="font-size: 1rem;"><strong>Identificación:</strong> <span id="displayId"></span></p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.1rem; color: var(--color-texto-mutado); margin-bottom: 1rem;">Mis Pedidos de Exportación</h3>
+                    <div id="contenedorPedidos">
+                        </div>
+                </div>
+
+                <button id="btnCerrarSesion" class="btn btn-block" style="background-color: #dc2626;">Cerrar Sesión</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>YURAMARKET</h4>
+                <p>Conectando el mejor cacao de exportación con las exigencias del mundo entero. Calidad, origen y transparencia.</p>
+            </div>
+            <!-- Columna 3: Redes Sociales -->
+            <div class="footer-col">
+                <h4>Contáctanos</h4>
+                <ul>
+                    <li>📧 Correo: yuramarket6@gmail.com</li>
+                    <li>📍 Ubicación: Manta, Manabí - Ecuador</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/yuramarket2026/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 YuraMarket. Catálogo Internacional de Cacao.</p>
+        </div>
+    </footer>
+    <script src="perfil.js"></script>
+</body>
+</html>
