@@ -1,11 +1,11 @@
-/* --- Variables de Color y Base --- */
+
 :root {
-    --color-principal: #78350f; /* Ámbar oscuro / Café cacao */
+    --color-principal: #78350f; 
     --color-principal-hover: #451a03;
-    --color-secundario: #d97706; /* Ámbar intermedio */
-    --color-fondo: #fef3c7; /* Ámbar claro de fondo */
+    --color-secundario: #d97706;
+    --color-fondo: #fef3c7; 
     --color-tarjeta: #ffffff;
-    --color-texto: #292524; /* Gris piedra oscuro */
+    --color-texto: #292524;
     --color-texto-mutado: #000000;
     --color-bajo: #522e00;
 }
@@ -23,7 +23,7 @@ body {
     background-size: cover;
     background-position: center center; 
     background-attachment: fixed;
-    
+    background-repeat: no-repeat;
     background-color: var(--color-fondo); 
     
     color: var(--color-texto);
@@ -32,7 +32,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- Barra de Navegación --- */
+
 .navbar {
     background-color: var(--color-principal);
     padding: 1rem;
@@ -52,7 +52,7 @@ body {
     gap: 1rem;
 }
 
-/* Ajuste responsivo para pantallas medianas/grandes */
+
 @media(min-width: 640px) {
     .nav-container {
         flex-direction: row;
@@ -78,6 +78,18 @@ body {
     font-weight: 500;
     transition: color 0.3s;
     padding-bottom: 0.25rem;
+    position: relative;
+}
+
+.nav-links a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -0.75rem; 
+    transform: translateY(-50%);
+    width: 1px; 
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.25); 
 }
 
 .nav-links a:hover {
@@ -89,7 +101,7 @@ body {
     border-bottom: 2px solid #fde68a;
 }
 
-/* --- Contenedores Generales --- */
+
 .main-content {
     flex-grow: 1;
     max-width: 1200px;
@@ -103,7 +115,7 @@ body {
     margin: 0 auto;
 }
 
-/* --- Sección de Bienvenida (Hero) --- */
+
 .hero {
     background-color: #1c1917;
     color: #ffffff;
