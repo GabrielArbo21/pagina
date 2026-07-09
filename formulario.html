@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YuraMarket | Cotizar</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
 
@@ -16,7 +15,8 @@
                 <a href="index.html">Inicio</a>
                 <a href="formulario.html" class="active">Cotizar</a>
                 <a href="variedades.html">Variedades</a>
-                <a href="mercado.html">Market Vivo</a>
+                <a href="mercado.html">Mercado Vivo</a>
+                <a href="perfil.html">Perfil</a>
             </div>
         </div>
     </nav>
@@ -24,75 +24,80 @@
     <main class="main-content">
         <div class="container-sm">
             <div class="card" style="text-align: left;">
-                <h2 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Intención de Compra</h2>
-                <p class="card-desc" style="margin-bottom: 1.5rem;">Por favor, ingresa los requisitos logísticos de tu empresa para simular tu orden de exportación.</p>
                 
-                <form id="formCotizacion">
-                    <div class="form-group">
-                        <label class="form-label">Compañía Importadora</label>
-                        <input type="text" id="compania" class="form-control" placeholder="Ej. Chocolate Global Corp" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Destino de Exportación</label>
-                        <select id="pais" class="form-control">
-                            <option value="usa">Estados Unidos (Puertos del Atlántico)</option>
-                            <option value="arg">Argentina (Puerto de Buenos Aires)</option>
-                            <option value="col">Colombia (Puerto de Cartagena)</option>
-                        </select>
-                    </div>
-
-                    <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="tipoCacao" value="Nacional" checked>
-                                <span>Nacional Fino</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="tipoCacao" value="CCN51">
-                                <span>CCN-51 Industrial</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="tipoCacao" value="Criollo">
-                                <span>Criollo Gourmet</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="tipoCacao" value="Trinitario">
-                                <span>Trinitario Premium</span>
-                            </label>
+                <div id="seccionFormulario">
+                    <h2 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Intención de Compra</h2>
+                    <p class="card-desc" style="margin-bottom: 1.5rem;">Por favor, ingresa los requisitos logísticos para simular tu orden.</p>
+                    
+                    <form id="formCotizacion">
+                        <div class="form-group">
+                            <label class="form-label">Compañía / Comprador</label>
+                            <input type="text" id="compania" class="form-control" required>
                         </div>
 
-                    <div class="form-group">
-                        <label class="form-label">Volumen Requerido (Toneladas Métricas)</label>
-                        <input type="number" id="toneladas" min="1" max="1000" class="form-control" placeholder="Ej. 20" required>
+                        <div class="form-group">
+                            <label class="form-label">Destino de Exportación</label>
+                                <select id="pais" class="form-control">
+                                <option value="usa">Estados Unidos (Puertos del Atlántico)</option>
+                                <option value="arg">Argentina (Puerto de Buenos Aires)</option>
+                                <option value="col">Colombia (Puerto de Cartagena)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Variedad Seleccionada</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="tipoCacao" value="Nacional" checked>
+                                    <span>Nacional Fino</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="tipoCacao" value="CCN51">
+                                    <span>CCN-51 Industrial</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="tipoCacao" value="Criollo">
+                                    <span>Criollo Gourmet</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="tipoCacao" value="Trinitario">
+                                    <span>Trinitario Premium</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Volumen Requerido (Toneladas Métricas)</label>
+                            <input type="number" id="toneladas" min="1" max="1000" class="form-control" placeholder="Ej. 20" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-block">Guardar Requerimientos</button>
+                    </form>
+
+                    <div id="alertaExito" class="alert alert-success hidden">
+                        ¡Requerimientos guardados! Visita la pestaña "Market Vivo" para ver el presupuesto.
                     </div>
-
-                    <button type="submit" class="btn btn-block">Guardar Requerimientos</button>
-                </form>
-
-                <div id="alertaExito" class="alert alert-success hidden">
-                    ¡Requerimientos guardados! Visita la pestaña "Market Vivo" para ver el presupuesto final.
                 </div>
+
+                <div id="seccionBloqueada" style="display: none; text-align: center; padding: 2rem 0;">
+                    <div style="font-size: 3.5rem; margin-bottom: 1rem;">🔒</div>
+                    <h2 style="color: var(--color-principal); margin-bottom: 1rem;">Acceso Restringido</h2>
+                    <p style="color: var(--color-texto-mutado); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">
+                        Para poder simular una orden de exportación y acceder a los precios en tiempo real, necesitas registrar tu perfil comercial primero.
+                    </p>
+                    <a href="perfil.html" class="btn">Ir a Crear Perfil</a>
+                </div>
+
             </div>
         </div>
     </main>
 
     <footer class="footer">
         <div class="footer-container">
-            <!-- Columna 1: Info de la marca -->
             <div class="footer-col">
                 <h4>YURAMARKET</h4>
                 <p>Conectando el mejor cacao de exportación con las exigencias del mundo entero. Calidad, origen y transparencia.</p>
             </div>
-            
-            <!-- Columna 2: Contacto -->
-            <div class="footer-col">
-                <h4>Contáctanos</h4>
-                <ul>
-                    <li>📧 Correo: tu-correo@ejemplo.com</li>
-                    <li>📍 Ubicación: Manta, Manabí - Ecuador</li>
-                </ul>
-            </div>
-            
             <!-- Columna 3: Redes Sociales -->
             <div class="footer-col">
                 <h4>Contáctanos</h4>
