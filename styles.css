@@ -31,7 +31,6 @@ body {
     min-height: 100vh;
 }
 
-/* --- Barra de Navegación --- */
 .navbar {
     background-color: var(--color-principal);
     padding: 1rem;
@@ -76,7 +75,7 @@ body {
     font-weight: 500;
     transition: color 0.3s;
     padding-bottom: 0.25rem;
-    position: relative; /* Clave para que funcionen las líneas divisorias */
+    position: relative; 
 }
 
 .nav-links a:hover {
@@ -88,7 +87,6 @@ body {
     border-bottom: 2px solid #fde68a;
 }
 
-/* --- Líneas divisorias del menú --- */
 .nav-links a:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -100,7 +98,7 @@ body {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* --- Contenido Principal --- */
+
 .main-content {
     flex-grow: 1;
     max-width: 1200px;
@@ -114,7 +112,6 @@ body {
     margin: 0 auto;
 }
 
-/* --- Sección de Bienvenida (Hero) con Glassmorphism --- */
 .hero {
     background-color: rgba(28, 25, 23, 0.80); 
     backdrop-filter: blur(8px); 
@@ -128,7 +125,7 @@ body {
     margin-bottom: 3rem;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
     
-    /* Animación de entrada */
+
     animation: fadeUp 0.8s ease-out forwards;
 }
 
@@ -147,7 +144,6 @@ body {
     line-height: 1.6;
 }
 
-/* --- Botones --- */
 .btn {
     display: inline-block;
     background-color: var(--color-secundario);
@@ -164,7 +160,7 @@ body {
 
 .btn:hover {
     background-color: #b45309;
-    transform: scale(1.05); /* Efecto de latido */
+    transform: scale(1.05); 
 }
 
 .btn-block {
@@ -173,7 +169,7 @@ body {
     text-align: center;
 }
 
-/* --- Arquitectura de Grillas Responsivas --- */
+
 .grid-3 {
     display: grid;
     grid-template-columns: 1fr;
@@ -198,7 +194,7 @@ body {
     }
 }
 
-/* --- Tarjetas Básicas Interactivas --- */
+
 .card {
     background-color: var(--color-tarjeta);
     padding: 2rem;
@@ -232,7 +228,7 @@ body {
     line-height: 1.5;
 }
 
-/* --- Tarjetas de Producto Especializado --- */
+
 .product-card {
     background-color: var(--color-tarjeta);
     border-radius: 1rem;
@@ -277,7 +273,7 @@ body {
 .badge-amber { background-color: #fef3c7; color: #92400e; }
 .badge-stone { background-color: #f5f5f4; color: #44403c; }
 
-/* --- Elementos de Formulario --- */
+
 .form-group {
     margin-bottom: 1.25rem;
 }
@@ -322,7 +318,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* --- Alertas y Estados --- */
+
 .alert {
     padding: 1rem;
     border-radius: 0.5rem;
@@ -341,7 +337,7 @@ body {
     display: none !important; 
 }
 
-/* --- Panel de Control Bursátil (Dashboard) --- */
+
 .market-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -374,7 +370,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* --- Tabla de Cálculos Automatizados --- */
+
 .table-calc {
     width: 100%;
     border-collapse: collapse;
@@ -395,7 +391,7 @@ body {
     padding-top: 1.5rem;
 }
 
-/* --- Pie de Página Ampliado --- */
+
 .footer {
     background-color: #0c0a09;
     color: #a8a29e;
@@ -468,8 +464,8 @@ body {
     grid-column: 1 / -1; 
 }
 
-/* --- Animaciones Keyframes --- */
-/* --- Animaciones Keyframes Globales --- */
+
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -481,7 +477,6 @@ body {
     }
 }
 
-/* Aplica la animación de entrada a TODOS los contenedores de la página */
 .card, 
 .product-card, 
 .hero, 
